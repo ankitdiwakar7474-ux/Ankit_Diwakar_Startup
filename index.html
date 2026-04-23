@@ -1,0 +1,2350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Professional digital services — Google Forms, Sheets Automation, Canva Design, and Digital Documents. Fast, affordable, and reliable freelance work."/>
+  <title>DigiCraft Studio by Ankit Diwakar — Digital Solutions by a Pro Freelancer</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+  <style>
+    /* =========================================
+       CSS CUSTOM PROPERTIES & RESET
+    ========================================= */
+    :root {
+      --bg:        #07090f;
+      --surface:   #0d1117;
+      --surface2:  #131a24;
+      --border:    rgba(255,255,255,0.07);
+      --accent:    #3b82f6;
+      --accent2:   #06b6d4;
+      --accent-g:  linear-gradient(135deg, #3b82f6, #06b6d4);
+      --text:      #e8edf5;
+      --muted:     #7a8899;
+      --white:     #ffffff;
+      --radius:    14px;
+      --radius-lg: 22px;
+      --shadow:    0 8px 40px rgba(0,0,0,0.5);
+      --trans:     0.3s cubic-bezier(0.4,0,0.2,1);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+      overflow-x: hidden;
+    }
+
+    ::selection { background: var(--accent); color: #fff; }
+
+    img { max-width: 100%; display: block; }
+
+    a { color: inherit; text-decoration: none; }
+
+    h1, h2, h3, h4, h5 {
+      font-family: 'Syne', sans-serif;
+      line-height: 1.15;
+    }
+
+    /* =========================================
+       UTILITY CLASSES
+    ========================================= */
+    .container {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .section {
+      padding: 110px 0;
+    }
+
+    .section-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent2);
+      margin-bottom: 18px;
+    }
+
+    .section-label::before {
+      content: '';
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: var(--accent-g);
+      border-radius: 2px;
+    }
+
+    .section-title {
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 800;
+      color: var(--white);
+      margin-bottom: 18px;
+    }
+
+    .section-title span {
+      background: var(--accent-g);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .section-sub {
+      font-size: 1.05rem;
+      color: var(--muted);
+      max-width: 520px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 14px 32px;
+      border-radius: 50px;
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 500;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: var(--trans);
+      border: none;
+    }
+
+    .btn-primary {
+      background: var(--accent-g);
+      color: #fff;
+      box-shadow: 0 4px 24px rgba(59,130,246,0.35);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 32px rgba(59,130,246,0.5);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--text);
+      border: 1.5px solid var(--border);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      background: rgba(59,130,246,0.06);
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 36px;
+      transition: var(--trans);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(59,130,246,0.05), transparent 60%);
+      opacity: 0;
+      transition: var(--trans);
+    }
+
+    .card:hover {
+      border-color: rgba(59,130,246,0.3);
+      transform: translateY(-4px);
+      box-shadow: 0 16px 48px rgba(0,0,0,0.4);
+    }
+
+    .card:hover::before { opacity: 1; }
+
+    /* Badge / tag */
+    .badge {
+      display: inline-block;
+      padding: 4px 14px;
+      border-radius: 50px;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .badge-blue   { background: rgba(59,130,246,0.15);  color: #60a5fa; }
+    .badge-cyan   { background: rgba(6,182,212,0.15);   color: #22d3ee; }
+    .badge-green  { background: rgba(34,197,94,0.15);   color: #4ade80; }
+    .badge-purple { background: rgba(168,85,247,0.15);  color: #c084fc; }
+
+    /* =========================================
+       NOISE OVERLAY
+    ========================================= */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+      opacity: 0.4;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* =========================================
+       NAVBAR
+    ========================================= */
+    #navbar {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      transition: var(--trans);
+      padding: 20px 0;
+    }
+
+    #navbar.scrolled {
+      background: rgba(7,9,15,0.92);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+      padding: 14px 0;
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--white);
+    }
+
+    .nav-logo span {
+      background: var(--accent-g);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 36px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.88rem;
+      font-weight: 500;
+      color: var(--muted);
+      transition: var(--trans);
+      position: relative;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -3px; left: 0;
+      width: 0; height: 2px;
+      background: var(--accent-g);
+      border-radius: 2px;
+      transition: var(--trans);
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--white);
+    }
+
+    .nav-links a:hover::after,
+    .nav-links a.active::after {
+      width: 100%;
+    }
+
+    .nav-cta { margin-left: 12px; }
+
+    /* Hamburger */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 4px;
+      background: none;
+      border: none;
+    }
+
+    .hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--text);
+      border-radius: 2px;
+      transition: var(--trans);
+    }
+
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    /* Mobile nav */
+    .mobile-nav {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: var(--bg);
+      z-index: 999;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 36px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+
+    .mobile-nav.open {
+      display: flex;
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    .mobile-nav a {
+      font-family: 'Syne', sans-serif;
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--muted);
+      transition: var(--trans);
+    }
+
+    .mobile-nav a:hover { color: var(--white); }
+
+    /* =========================================
+       HERO
+    ========================================= */
+    #home {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      padding-top: 100px;
+    }
+
+    /* Gradient orbs */
+    #home::after {
+      content: '';
+      position: absolute;
+      top: -120px; right: -120px;
+      width: 600px; height: 600px;
+      background: radial-gradient(circle, rgba(59,130,246,0.18) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-orb2 {
+      position: absolute;
+      bottom: -100px; left: -100px;
+      width: 500px; height: 500px;
+      background: radial-gradient(circle, rgba(6,182,212,0.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 760px;
+    }
+
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(59,130,246,0.1);
+      border: 1px solid rgba(59,130,246,0.2);
+      padding: 7px 18px;
+      border-radius: 50px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: #93c5fd;
+      margin-bottom: 28px;
+      animation: fadeUp 0.6s ease both;
+    }
+
+    .hero-eyebrow .dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: #60a5fa;
+      animation: pulse 2s infinite;
+    }
+
+    .hero-title {
+      font-size: clamp(2.8rem, 7vw, 5.2rem);
+      font-weight: 800;
+      color: var(--white);
+      letter-spacing: -0.02em;
+      margin-bottom: 24px;
+      animation: fadeUp 0.7s ease 0.1s both;
+    }
+
+    .hero-title .grad {
+      background: var(--accent-g);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-desc {
+      font-size: 1.15rem;
+      color: var(--muted);
+      max-width: 560px;
+      margin-bottom: 42px;
+      animation: fadeUp 0.7s ease 0.2s both;
+    }
+
+    .hero-btns {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      animation: fadeUp 0.7s ease 0.3s both;
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: 48px;
+      margin-top: 72px;
+      animation: fadeUp 0.7s ease 0.4s both;
+    }
+
+    .stat-num {
+      font-family: 'Syne', sans-serif;
+      font-size: 2.4rem;
+      font-weight: 800;
+      color: var(--white);
+      background: var(--accent-g);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .stat-label {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+
+    /* Floating card decoration */
+    .hero-card-float {
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 380px;
+      animation: float 6s ease-in-out infinite, fadeRight 0.8s ease 0.4s both;
+    }
+
+    .hero-card-float .card {
+      padding: 28px;
+    }
+
+    .service-pill {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 14px 18px;
+      background: var(--surface2);
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      margin-bottom: 12px;
+      font-size: 0.88rem;
+      font-weight: 500;
+      transition: var(--trans);
+    }
+
+    .service-pill:last-child { margin-bottom: 0; }
+
+    .service-pill:hover {
+      border-color: rgba(59,130,246,0.3);
+      background: rgba(59,130,246,0.06);
+    }
+
+    .pill-icon {
+      width: 36px; height: 36px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.95rem;
+      flex-shrink: 0;
+    }
+
+    /* =========================================
+       MARQUEE STRIP
+    ========================================= */
+    .marquee-section {
+      padding: 24px 0;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      overflow: hidden;
+      background: var(--surface);
+    }
+
+    .marquee-track {
+      display: flex;
+      gap: 0;
+      animation: marquee 24s linear infinite;
+      white-space: nowrap;
+    }
+
+    .marquee-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 0 36px;
+      font-family: 'Syne', sans-serif;
+      font-weight: 600;
+      font-size: 0.85rem;
+      color: var(--muted);
+      letter-spacing: 0.05em;
+    }
+
+    .marquee-item i { color: var(--accent); font-size: 0.8rem; }
+
+    /* =========================================
+       SERVICES
+    ========================================= */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+      margin-top: 60px;
+    }
+
+    .service-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 38px 32px;
+      transition: var(--trans);
+      position: relative;
+      overflow: hidden;
+      cursor: default;
+    }
+
+    .service-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 3px;
+      background: var(--accent-g);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: var(--trans);
+    }
+
+    .service-card:hover {
+      border-color: rgba(59,130,246,0.25);
+      transform: translateY(-6px);
+      box-shadow: var(--shadow);
+    }
+
+    .service-card:hover::after { transform: scaleX(1); }
+
+    .service-icon {
+      width: 58px; height: 58px;
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      margin-bottom: 24px;
+    }
+
+    .service-card h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 12px;
+    }
+
+    .service-card p {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-bottom: 20px;
+    }
+
+    .feature-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .feature-list li {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.83rem;
+      color: var(--muted);
+    }
+
+    .feature-list li i {
+      color: #22d3ee;
+      font-size: 0.75rem;
+      flex-shrink: 0;
+    }
+
+    /* =========================================
+       PRICING
+    ========================================= */
+    #pricing { background: var(--surface); }
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      margin-top: 60px;
+      align-items: stretch;
+    }
+
+    .pricing-card {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 40px 32px;
+      transition: var(--trans);
+      position: relative;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .pricing-card.featured {
+      background: linear-gradient(160deg, rgba(59,130,246,0.12), rgba(6,182,212,0.06));
+      border-color: rgba(59,130,246,0.4);
+      transform: scale(1.03);
+      box-shadow: 0 0 60px rgba(59,130,246,0.15);
+    }
+
+    .pricing-card:hover {
+      border-color: rgba(59,130,246,0.35);
+      transform: translateY(-4px);
+    }
+
+    .pricing-card.featured:hover {
+      transform: scale(1.03) translateY(-4px);
+    }
+
+    .popular-tag {
+      position: absolute;
+      top: -14px; left: 50%;
+      transform: translateX(-50%);
+      background: var(--accent-g);
+      color: #fff;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 5px 20px;
+      border-radius: 50px;
+      white-space: nowrap;
+    }
+
+    .pricing-tier {
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 12px;
+    }
+
+    .pricing-price {
+      display: flex;
+      align-items: baseline;
+      gap: 4px;
+      margin-bottom: 8px;
+    }
+
+    .price-currency { font-size: 1.2rem; color: var(--muted); }
+
+    .price-amount {
+      font-family: 'Syne', sans-serif;
+      font-size: 3rem;
+      font-weight: 800;
+      color: var(--white);
+    }
+
+    .price-period { font-size: 0.85rem; color: var(--muted); }
+
+    .pricing-desc {
+      font-size: 0.88rem;
+      color: var(--muted);
+      margin-bottom: 28px;
+      padding-bottom: 28px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .pricing-features {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      flex: 1;
+      margin-bottom: 32px;
+    }
+
+    .pricing-features li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.88rem;
+    }
+
+    .pricing-features li i {
+      width: 18px;
+      color: #4ade80;
+      font-size: 0.8rem;
+    }
+
+    .pricing-features li.disabled { color: var(--muted); opacity: 0.5; }
+    .pricing-features li.disabled i { color: var(--muted); }
+
+    /* =========================================
+       WHY CHOOSE ME
+    ========================================= */
+    .why-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+      margin-top: 60px;
+    }
+
+    .why-list {
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+    }
+
+    .why-item {
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+    }
+
+    .why-num {
+      width: 44px; height: 44px;
+      border-radius: 12px;
+      background: rgba(59,130,246,0.1);
+      border: 1px solid rgba(59,130,246,0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: 0.95rem;
+      color: var(--accent);
+      flex-shrink: 0;
+    }
+
+    .why-text h4 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 6px;
+    }
+
+    .why-text p { font-size: 0.88rem; color: var(--muted); }
+
+    .why-visual {
+      position: relative;
+    }
+
+    .why-card-stack .card {
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .why-card-stack .card:last-child { margin-bottom: 0; }
+
+    .wcs-icon {
+      width: 48px; height: 48px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+
+    .wcs-info { flex: 1; }
+    .wcs-info h5 { font-size: 0.9rem; font-weight: 700; color: var(--white); }
+    .wcs-info p  { font-size: 0.78rem; color: var(--muted); }
+
+    .wcs-val {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.4rem;
+      font-weight: 800;
+      background: var(--accent-g);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* =========================================
+       PORTFOLIO
+    ========================================= */
+    #portfolio { background: var(--surface); }
+
+    .portfolio-tabs {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 48px;
+      margin-bottom: 40px;
+    }
+
+    .tab-btn {
+      padding: 8px 22px;
+      border-radius: 50px;
+      font-size: 0.84rem;
+      font-weight: 500;
+      cursor: pointer;
+      border: 1.5px solid var(--border);
+      background: transparent;
+      color: var(--muted);
+      transition: var(--trans);
+      font-family: 'DM Sans', sans-serif;
+    }
+
+    .tab-btn:hover, .tab-btn.active {
+      border-color: var(--accent);
+      color: var(--accent);
+      background: rgba(59,130,246,0.08);
+    }
+
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 24px;
+    }
+
+    .portfolio-item {
+      position: relative;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      transition: var(--trans);
+    }
+
+    .portfolio-item:hover {
+      border-color: rgba(59,130,246,0.3);
+      transform: translateY(-4px);
+      box-shadow: var(--shadow);
+    }
+
+    .portfolio-thumb {
+      height: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 4rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .portfolio-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(7,9,15,0.9);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: var(--trans);
+    }
+
+    .portfolio-item:hover .portfolio-overlay { opacity: 1; }
+
+    .portfolio-info {
+      padding: 20px 22px;
+    }
+
+    .portfolio-info h4 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 6px;
+    }
+
+    .portfolio-info p { font-size: 0.8rem; color: var(--muted); }
+
+    /* =========================================
+       TESTIMONIALS
+    ========================================= */
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      margin-top: 60px;
+    }
+
+    .testi-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 32px;
+      transition: var(--trans);
+    }
+
+    .testi-card:hover {
+      border-color: rgba(59,130,246,0.25);
+      transform: translateY(-4px);
+    }
+
+    .testi-stars {
+      display: flex;
+      gap: 3px;
+      margin-bottom: 18px;
+    }
+
+    .testi-stars i { color: #fbbf24; font-size: 0.85rem; }
+
+    .testi-card blockquote {
+      font-size: 0.92rem;
+      color: var(--text);
+      font-style: italic;
+      line-height: 1.7;
+      margin-bottom: 24px;
+    }
+
+    .testi-author {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .author-avatar {
+      width: 42px; height: 42px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      color: #fff;
+      flex-shrink: 0;
+    }
+
+    .author-name {
+      font-weight: 700;
+      font-size: 0.9rem;
+      color: var(--white);
+    }
+
+    .author-role { font-size: 0.78rem; color: var(--muted); }
+
+    /* =========================================
+       ABOUT
+    ========================================= */
+    #about { background: var(--surface); }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.5fr;
+      gap: 72px;
+      align-items: center;
+    }
+
+    .about-visual {
+      position: relative;
+    }
+
+    .about-avatar {
+      width: 100%;
+      aspect-ratio: 1;
+      border-radius: var(--radius-lg);
+      background: linear-gradient(135deg, rgba(59,130,246,0.15), rgba(6,182,212,0.1));
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 8rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .about-badge {
+      position: absolute;
+      bottom: -16px;
+      right: -16px;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 16px 20px;
+      text-align: center;
+    }
+
+    .about-badge .num {
+      font-family: 'Syne', sans-serif;
+      font-size: 2rem;
+      font-weight: 800;
+      background: var(--accent-g);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .about-badge .lbl {
+      font-size: 0.72rem;
+      color: var(--muted);
+    }
+
+    .about-text p {
+      font-size: 1rem;
+      color: var(--muted);
+      margin-bottom: 20px;
+    }
+
+    .skills-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 28px 0;
+    }
+
+    .skill-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 7px 16px;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: var(--text);
+      transition: var(--trans);
+    }
+
+    .skill-tag:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    /* =========================================
+       CONTACT
+    ========================================= */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.3fr;
+      gap: 60px;
+      margin-top: 60px;
+    }
+
+    .contact-info h3 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 18px;
+    }
+
+    .contact-info p {
+      font-size: 0.92rem;
+      color: var(--muted);
+      margin-bottom: 36px;
+    }
+
+    .contact-method {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 18px 22px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      margin-bottom: 14px;
+      transition: var(--trans);
+    }
+
+    .contact-method:hover {
+      border-color: rgba(59,130,246,0.3);
+      background: rgba(59,130,246,0.05);
+    }
+
+    .cm-icon {
+      width: 44px; height: 44px;
+      border-radius: 12px;
+      background: rgba(59,130,246,0.12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      color: var(--accent);
+      flex-shrink: 0;
+    }
+
+    .cm-label { font-size: 0.75rem; color: var(--muted); margin-bottom: 2px; }
+    .cm-value { font-size: 0.9rem; font-weight: 500; color: var(--white); }
+
+    /* Form */
+    .contact-form {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 40px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--muted);
+      margin-bottom: 8px;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 13px 18px;
+      background: var(--bg);
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius);
+      color: var(--text);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.92rem;
+      transition: var(--trans);
+      outline: none;
+      resize: none;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(59,130,246,0.12);
+    }
+
+    .form-group input::placeholder,
+    .form-group textarea::placeholder {
+      color: rgba(122,136,153,0.5);
+    }
+
+    .form-group select option { background: var(--bg); }
+
+    .form-error {
+      display: none;
+      font-size: 0.75rem;
+      color: #f87171;
+      margin-top: 5px;
+    }
+
+    .form-success {
+      display: none;
+      text-align: center;
+      padding: 24px;
+      color: #4ade80;
+      font-weight: 500;
+    }
+
+    .form-success i { font-size: 2.5rem; display: block; margin-bottom: 10px; }
+
+    /* =========================================
+       WHATSAPP FLOAT
+    ========================================= */
+    .wa-float {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      z-index: 999;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      cursor: pointer;
+      animation: float 4s ease-in-out infinite;
+    }
+
+    .wa-tooltip {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 10px 18px;
+      border-radius: 50px;
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: var(--text);
+      opacity: 0;
+      transform: translateX(10px);
+      transition: var(--trans);
+      pointer-events: none;
+      white-space: nowrap;
+    }
+
+    .wa-float:hover .wa-tooltip {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .wa-btn {
+      width: 58px; height: 58px;
+      border-radius: 50%;
+      background: #25d366;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.6rem;
+      color: #fff;
+      box-shadow: 0 4px 24px rgba(37,211,102,0.4);
+      transition: var(--trans);
+    }
+
+    .wa-float:hover .wa-btn {
+      transform: scale(1.1);
+      box-shadow: 0 6px 32px rgba(37,211,102,0.55);
+    }
+
+    .wa-pulse {
+      position: absolute;
+      top: 0; right: 0;
+      width: 58px; height: 58px;
+      border-radius: 50%;
+      background: #25d366;
+      animation: waPulse 2.5s infinite;
+      z-index: -1;
+    }
+
+    /* =========================================
+       FOOTER
+    ========================================= */
+    footer {
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      padding: 60px 0 30px;
+    }
+
+    .footer-top {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      gap: 48px;
+      margin-bottom: 48px;
+    }
+
+    .footer-brand p {
+      font-size: 0.88rem;
+      color: var(--muted);
+      margin-top: 14px;
+      max-width: 260px;
+    }
+
+    .footer-col h5 {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 18px;
+      letter-spacing: 0.04em;
+    }
+
+    .footer-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .footer-links a {
+      font-size: 0.85rem;
+      color: var(--muted);
+      transition: var(--trans);
+    }
+
+    .footer-links a:hover { color: var(--white); }
+
+    .footer-bottom {
+      border-top: 1px solid var(--border);
+      padding-top: 28px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .footer-bottom p { font-size: 0.82rem; color: var(--muted); }
+
+    .social-links {
+      display: flex;
+      gap: 12px;
+    }
+
+    .social-link {
+      width: 36px; height: 36px;
+      border-radius: 10px;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.85rem;
+      color: var(--muted);
+      transition: var(--trans);
+    }
+
+    .social-link:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    /* =========================================
+       SCROLL REVEAL
+    ========================================= */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    /* =========================================
+       KEYFRAMES
+    ========================================= */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(28px); }
+      to   { opacity: 1; transform: none; }
+    }
+
+    @keyframes fadeRight {
+      from { opacity: 0; transform: translateX(40px) translateY(-50%); }
+      to   { opacity: 1; transform: translateX(0) translateY(-50%); }
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50%       { transform: translateY(-12px); }
+    }
+
+    @keyframes marquee {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-50%); }
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50%       { opacity: 0.4; }
+    }
+
+    @keyframes waPulse {
+      0%   { transform: scale(1); opacity: 0.6; }
+      100% { transform: scale(1.8); opacity: 0; }
+    }
+
+    /* =========================================
+       RESPONSIVE
+    ========================================= */
+    @media (max-width: 1024px) {
+      .hero-card-float { display: none; }
+      .why-grid { grid-template-columns: 1fr; }
+      .about-grid { grid-template-columns: 1fr; gap: 40px; }
+      .about-visual { max-width: 340px; margin: 0 auto; }
+      .footer-top { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 768px) {
+      .section { padding: 80px 0; }
+      .nav-links, .nav-cta { display: none; }
+      .hamburger { display: flex; }
+      .hero-stats { gap: 28px; }
+      .contact-grid { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+      .footer-top { grid-template-columns: 1fr; gap: 32px; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+      .pricing-card.featured { transform: none; }
+    }
+
+    @media (max-width: 480px) {
+      .hero-btns { flex-direction: column; }
+      .hero-stats { flex-wrap: wrap; }
+      .contact-form { padding: 24px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ============================================================
+     NAVBAR
+============================================================ -->
+<nav id="navbar">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="#home" class="nav-logo">Digi<span>Craft</span></a>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home"      class="active">Home</a></li>
+        <li><a href="#services"         >Services</a></li>
+        <li><a href="#pricing"          >Pricing</a></li>
+        <li><a href="#portfolio"        >Portfolio</a></li>
+        <li><a href="#about"            >About</a></li>
+        <li><a href="#contact"          >Contact</a></li>
+      </ul>
+
+      <a href="#contact" class="btn btn-primary nav-cta" style="padding:11px 24px">
+        <i class="fa-solid fa-paper-plane"></i> Hire Me
+      </a>
+
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile Nav -->
+<div class="mobile-nav" id="mobileNav">
+  <a href="#home"      onclick="closeMobile()">Home</a>
+  <a href="#services"  onclick="closeMobile()">Services</a>
+  <a href="#pricing"   onclick="closeMobile()">Pricing</a>
+  <a href="#portfolio" onclick="closeMobile()">Portfolio</a>
+  <a href="#about"     onclick="closeMobile()">About</a>
+  <a href="#contact"   onclick="closeMobile()">Contact</a>
+</div>
+
+<!-- ============================================================
+     HERO
+============================================================ -->
+<section id="home">
+  <div class="hero-orb2"></div>
+
+  <div class="container">
+    <div class="hero-content">
+
+      <div class="hero-eyebrow">
+        <span class="dot"></span>
+        Available for Freelance Work
+      </div>
+
+      <h1 class="hero-title">
+        Turn Your Ideas into<br>
+        <span class="grad">Digital Solutions</span>
+      </h1>
+
+      <p class="hero-desc">
+        I craft professional Google Forms, automated Sheets dashboards, stunning Canva designs,
+        and polished digital documents — fast, affordable, and pixel-perfect.
+      </p>
+
+      <div class="hero-btns">
+        <a href="#services" class="btn btn-primary">
+          <i class="fa-solid fa-rocket"></i> Explore Services
+        </a>
+        <a href="#portfolio" class="btn btn-outline">
+          <i class="fa-solid fa-eye"></i> View Portfolio
+        </a>
+      </div>
+
+      <div class="hero-stats">
+        <div>
+          <div class="stat-num">150+</div>
+          <div class="stat-label">Projects Delivered</div>
+        </div>
+        <div>
+          <div class="stat-num">98%</div>
+          <div class="stat-label">Client Satisfaction</div>
+        </div>
+        <div>
+          <div class="stat-num">48h</div>
+          <div class="stat-label">Avg. Turnaround</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Floating Services Card -->
+    <div class="hero-card-float">
+      <div class="card">
+        <p style="font-size:0.75rem;color:var(--muted);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:18px;font-weight:600;">What I Do</p>
+
+        <div class="service-pill">
+          <div class="pill-icon" style="background:rgba(59,130,246,0.15)">📋</div>
+          Google Forms & Surveys
+        </div>
+        <div class="service-pill">
+          <div class="pill-icon" style="background:rgba(34,197,94,0.15)">📊</div>
+          Sheets Automation
+        </div>
+        <div class="service-pill">
+          <div class="pill-icon" style="background:rgba(168,85,247,0.15)">🎨</div>
+          Canva Design
+        </div>
+        <div class="service-pill">
+          <div class="pill-icon" style="background:rgba(245,158,11,0.15)">📄</div>
+          Digital Documents
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     MARQUEE
+============================================================ -->
+<div class="marquee-section">
+  <div class="marquee-track">
+    <!-- duplicated for seamless loop -->
+    <span class="marquee-item"><i class="fa-solid fa-star"></i> Google Forms</span>
+    <span class="marquee-item"><i class="fa-solid fa-star"></i> Sheets Dashboards</span>
+    <span class="marquee-item"><i class="fa-solid fa-star"></i> Canva Design</span>
+    <span class="marquee-item"><i class="fa-solid fa-star"></i> PDF Reports</span>
+    <span class="marquee-item"><i class="fa-solid fa-star"></i> Portfolios</span>
+    <span class="marquee-item"><i class="fa-solid fa-star"></i> Presentations</span>
+    <span class="marquee-item"><i class="fa-solid fa-star"></i> Social Media Posts</span>
+    <span class="marquee-item"><i class="fa-solid fa-star"></i> Resume Design</span>
+    <span class="marquee-item"><i class="fa-solid fa-star"></i> Google Forms</span>
+    <span class="marquee-item"><i class="fa-solid fa-star"></i> Sheets Dashboards</span>
+    <span class="marquee-item"><i class="fa-solid fa-star"></i> Canva Design</span>
+    <span class="marquee-item"><i class="fa-solid fa-star"></i> PDF Reports</span>
+    <span class="marquee-item"><i class="fa-solid fa-star"></i> Portfolios</span>
+    <span class="marquee-item"><i class="fa-solid fa-star"></i> Presentations</span>
+    <span class="marquee-item"><i class="fa-solid fa-star"></i> Social Media Posts</span>
+    <span class="marquee-item"><i class="fa-solid fa-star"></i> Resume Design</span>
+  </div>
+</div>
+
+<!-- ============================================================
+     SERVICES
+============================================================ -->
+<section id="services" class="section">
+  <div class="container">
+
+    <div class="reveal">
+      <div class="section-label">What I Offer</div>
+      <h2 class="section-title">Services Tailored to <span>Your Needs</span></h2>
+      <p class="section-sub">From simple forms to fully automated dashboards — I handle the digital heavy lifting so you can focus on what matters.</p>
+    </div>
+
+    <div class="services-grid">
+
+      <!-- Google Forms -->
+      <div class="card service-card reveal">
+        <div class="service-icon" style="background:rgba(59,130,246,0.12)">
+          <i class="fa-brands fa-google" style="color:#60a5fa"></i>
+        </div>
+        <h3>Google Form Creation</h3>
+        <p>Professional, branded forms for surveys, registrations, feedback, quizzes, and more — with conditional logic and auto-responses.</p>
+        <ul class="feature-list">
+          <li><i class="fa-solid fa-check-circle"></i> Custom branding & themes</li>
+          <li><i class="fa-solid fa-check-circle"></i> Conditional logic / branching</li>
+          <li><i class="fa-solid fa-check-circle"></i> Response validation</li>
+          <li><i class="fa-solid fa-check-circle"></i> Email notification setup</li>
+          <li><i class="fa-solid fa-check-circle"></i> Google Sheets integration</li>
+        </ul>
+      </div>
+
+      <!-- Sheets Automation -->
+      <div class="card service-card reveal">
+        <div class="service-icon" style="background:rgba(34,197,94,0.12)">
+          <i class="fa-solid fa-table-cells" style="color:#4ade80"></i>
+        </div>
+        <h3>Sheets Automation & Dashboards</h3>
+        <p>Transform raw data into interactive dashboards with charts, pivot tables, formulas, and Apps Script automation.</p>
+        <ul class="feature-list">
+          <li><i class="fa-solid fa-check-circle"></i> Dynamic charts & graphs</li>
+          <li><i class="fa-solid fa-check-circle"></i> Advanced formulas (VLOOKUP, IF, etc.)</li>
+          <li><i class="fa-solid fa-check-circle"></i> Google Apps Script macros</li>
+          <li><i class="fa-solid fa-check-circle"></i> Auto-email reports</li>
+          <li><i class="fa-solid fa-check-circle"></i> Data cleaning & formatting</li>
+        </ul>
+      </div>
+
+      <!-- Canva Design -->
+      <div class="card service-card reveal">
+        <div class="service-icon" style="background:rgba(168,85,247,0.12)">
+          <i class="fa-solid fa-paintbrush" style="color:#c084fc"></i>
+        </div>
+        <h3>Canva Design</h3>
+        <p>Eye-catching visual content for social media, marketing materials, resumes, and presentations — all on-brand and print-ready.</p>
+        <ul class="feature-list">
+          <li><i class="fa-solid fa-check-circle"></i> Social media posts & stories</li>
+          <li><i class="fa-solid fa-check-circle"></i> Posters & flyers</li>
+          <li><i class="fa-solid fa-check-circle"></i> Resume / CV design</li>
+          <li><i class="fa-solid fa-check-circle"></i> Presentation decks</li>
+          <li><i class="fa-solid fa-check-circle"></i> Brand kit & logo kits</li>
+        </ul>
+      </div>
+
+      <!-- Digital Documents -->
+      <div class="card service-card reveal">
+        <div class="service-icon" style="background:rgba(245,158,11,0.12)">
+          <i class="fa-solid fa-file-pdf" style="color:#fbbf24"></i>
+        </div>
+        <h3>Digital Document Creation</h3>
+        <p>Polished PDFs, professional reports, portfolios, study notes, and formatted documents ready to share or publish.</p>
+        <ul class="feature-list">
+          <li><i class="fa-solid fa-check-circle"></i> PDF reports & e-books</li>
+          <li><i class="fa-solid fa-check-circle"></i> Digital portfolios</li>
+          <li><i class="fa-solid fa-check-circle"></i> Business proposals</li>
+          <li><i class="fa-solid fa-check-circle"></i> Study notes & guides</li>
+          <li><i class="fa-solid fa-check-circle"></i> Word / Docs formatting</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     PRICING
+============================================================ -->
+<section id="pricing" class="section">
+  <div class="container">
+
+    <div class="reveal" style="text-align:center">
+      <div class="section-label" style="justify-content:center">Transparent Pricing</div>
+      <h2 class="section-title">Simple, Flexible <span>Packages</span></h2>
+      <p class="section-sub" style="margin:0 auto">No hidden fees. Pick the plan that fits your project.</p>
+    </div>
+
+    <div class="pricing-grid">
+
+      <!-- Basic -->
+      <div class="pricing-card reveal">
+        <div class="pricing-tier">Basic</div>
+        <div class="pricing-price">
+          <span class="price-currency">₹</span>
+          <span class="price-amount">499</span>
+          <span class="price-period">/ project</span>
+        </div>
+        <p class="pricing-desc">Perfect for simple, single-task digital needs.</p>
+        <ul class="pricing-features">
+          <li><i class="fa-solid fa-circle-check"></i> 1 service deliverable</li>
+          <li><i class="fa-solid fa-circle-check"></i> Basic customization</li>
+          <li><i class="fa-solid fa-circle-check"></i> 3-day delivery</li>
+          <li><i class="fa-solid fa-circle-check"></i> 1 revision round</li>
+          <li><i class="fa-solid fa-circle-check"></i> PDF/share-ready output</li>
+          <li class="disabled"><i class="fa-solid fa-circle-xmark"></i> Automation / Scripts</li>
+          <li class="disabled"><i class="fa-solid fa-circle-xmark"></i> Priority support</li>
+        </ul>
+        <a href="#contact" class="btn btn-outline" style="justify-content:center">Get Started</a>
+      </div>
+
+      <!-- Standard -->
+      <div class="pricing-card featured reveal">
+        <div class="popular-tag">⭐ Most Popular</div>
+        <div class="pricing-tier">Standard</div>
+        <div class="pricing-price">
+          <span class="price-currency">₹</span>
+          <span class="price-amount">999</span>
+          <span class="price-period">/ project</span>
+        </div>
+        <p class="pricing-desc">Great for businesses needing quality digital work.</p>
+        <ul class="pricing-features">
+          <li><i class="fa-solid fa-circle-check"></i> Up to 3 deliverables</li>
+          <li><i class="fa-solid fa-circle-check"></i> Advanced customization</li>
+          <li><i class="fa-solid fa-circle-check"></i> 2-day delivery</li>
+          <li><i class="fa-solid fa-circle-check"></i> 3 revision rounds</li>
+          <li><i class="fa-solid fa-circle-check"></i> Source files included</li>
+          <li><i class="fa-solid fa-circle-check"></i> Basic automation</li>
+          <li class="disabled"><i class="fa-solid fa-circle-xmark"></i> Priority support</li>
+        </ul>
+        <a href="#contact" class="btn btn-primary" style="justify-content:center">Get Started</a>
+      </div>
+
+      <!-- Premium -->
+      <div class="pricing-card reveal">
+        <div class="pricing-tier">Premium</div>
+        <div class="pricing-price">
+          <span class="price-currency">₹</span>
+          <span class="price-amount">1999</span>
+          <span class="price-period">/ project</span>
+        </div>
+        <p class="pricing-desc">Full-suite solution with automation & priority delivery.</p>
+        <ul class="pricing-features">
+          <li><i class="fa-solid fa-circle-check"></i> Unlimited deliverables</li>
+          <li><i class="fa-solid fa-circle-check"></i> Full customization</li>
+          <li><i class="fa-solid fa-circle-check"></i> 24h rush delivery</li>
+          <li><i class="fa-solid fa-circle-check"></i> Unlimited revisions</li>
+          <li><i class="fa-solid fa-circle-check"></i> All source files</li>
+          <li><i class="fa-solid fa-circle-check"></i> Full automation & scripts</li>
+          <li><i class="fa-solid fa-circle-check"></i> Priority WhatsApp support</li>
+        </ul>
+        <a href="#contact" class="btn btn-outline" style="justify-content:center">Get Started</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     WHY CHOOSE ME
+============================================================ -->
+<section class="section">
+  <div class="container">
+
+    <div class="reveal">
+      <div class="section-label">Why DigiCraft</div>
+      <h2 class="section-title">Why Clients <span>Choose Me</span></h2>
+      <p class="section-sub">Quality work, fast delivery, and a freelancer who actually cares about your results.</p>
+    </div>
+
+    <div class="why-grid">
+      <div class="why-list">
+        <div class="why-item reveal">
+          <div class="why-num">01</div>
+          <div class="why-text">
+            <h4>Lightning-Fast Turnaround</h4>
+            <p>Most projects delivered within 24–48 hours. Rush delivery available for urgent needs.</p>
+          </div>
+        </div>
+        <div class="why-item reveal">
+          <div class="why-num">02</div>
+          <div class="why-text">
+            <h4>Pixel-Perfect Quality</h4>
+            <p>Every deliverable is meticulously crafted and reviewed before being sent. No sloppy work.</p>
+          </div>
+        </div>
+        <div class="why-item reveal">
+          <div class="why-num">03</div>
+          <div class="why-text">
+            <h4>Direct Communication</h4>
+            <p>You work directly with me — no middlemen, no delays, no miscommunication.</p>
+          </div>
+        </div>
+        <div class="why-item reveal">
+          <div class="why-num">04</div>
+          <div class="why-text">
+            <h4>Revisions Until You're Happy</h4>
+            <p>Your satisfaction is the goal. I iterate until the output perfectly matches your vision.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="why-visual reveal">
+        <div class="why-card-stack">
+          <div class="card">
+            <div class="wcs-icon" style="background:rgba(59,130,246,0.12)">
+              <i class="fa-solid fa-trophy" style="color:#60a5fa"></i>
+            </div>
+            <div class="wcs-info">
+              <h5>Projects Completed</h5>
+              <p>Across all service categories</p>
+            </div>
+            <div class="wcs-val">150+</div>
+          </div>
+          <div class="card">
+            <div class="wcs-icon" style="background:rgba(34,197,94,0.12)">
+              <i class="fa-solid fa-star" style="color:#4ade80"></i>
+            </div>
+            <div class="wcs-info">
+              <h5>Average Rating</h5>
+              <p>Based on client reviews</p>
+            </div>
+            <div class="wcs-val">4.9★</div>
+          </div>
+          <div class="card">
+            <div class="wcs-icon" style="background:rgba(245,158,11,0.12)">
+              <i class="fa-solid fa-clock" style="color:#fbbf24"></i>
+            </div>
+            <div class="wcs-info">
+              <h5>Avg. Response Time</h5>
+              <p>WhatsApp & email replies</p>
+            </div>
+            <div class="wcs-val">&lt; 2h</div>
+          </div>
+          <div class="card">
+            <div class="wcs-icon" style="background:rgba(168,85,247,0.12)">
+              <i class="fa-solid fa-repeat" style="color:#c084fc"></i>
+            </div>
+            <div class="wcs-info">
+              <h5>Repeat Clients</h5>
+              <p>Return for multiple projects</p>
+            </div>
+            <div class="wcs-val">70%</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     PORTFOLIO
+============================================================ -->
+<section id="portfolio" class="section">
+  <div class="container">
+
+    <div class="reveal">
+      <div class="section-label">My Work</div>
+      <h2 class="section-title">Recent <span>Portfolio</span></h2>
+      <p class="section-sub">A selection of projects delivered to happy clients.</p>
+    </div>
+
+    <div class="portfolio-tabs reveal">
+      <button class="tab-btn active" onclick="filterPortfolio('all', this)">All</button>
+      <button class="tab-btn" onclick="filterPortfolio('forms', this)">Google Forms</button>
+      <button class="tab-btn" onclick="filterPortfolio('sheets', this)">Sheets</button>
+      <button class="tab-btn" onclick="filterPortfolio('canva', this)">Canva Design</button>
+      <button class="tab-btn" onclick="filterPortfolio('docs', this)">Documents</button>
+    </div>
+
+    <div class="portfolio-grid" id="portfolioGrid">
+
+      <div class="portfolio-item" data-cat="forms">
+        <div class="portfolio-thumb" style="background:linear-gradient(135deg,rgba(59,130,246,0.2),rgba(6,182,212,0.1))">
+          📋
+          <div class="portfolio-overlay">
+            <span class="badge badge-blue">Google Forms</span>
+          </div>
+        </div>
+        <div class="portfolio-info">
+          <h4>Job Application Form</h4>
+          <p>Multi-step form with file upload, scoring & auto-email confirmation</p>
+        </div>
+      </div>
+
+      <div class="portfolio-item" data-cat="sheets">
+        <div class="portfolio-thumb" style="background:linear-gradient(135deg,rgba(34,197,94,0.2),rgba(16,185,129,0.1))">
+          📊
+          <div class="portfolio-overlay">
+            <span class="badge badge-green">Sheets</span>
+          </div>
+        </div>
+        <div class="portfolio-info">
+          <h4>Sales Dashboard</h4>
+          <p>Real-time KPI dashboard with charts, filters & monthly trends</p>
+        </div>
+      </div>
+
+      <div class="portfolio-item" data-cat="canva">
+        <div class="portfolio-thumb" style="background:linear-gradient(135deg,rgba(168,85,247,0.2),rgba(236,72,153,0.1))">
+          🎨
+          <div class="portfolio-overlay">
+            <span class="badge badge-purple">Canva</span>
+          </div>
+        </div>
+        <div class="portfolio-info">
+          <h4>Instagram Post Series</h4>
+          <p>10-post carousel series for a clothing brand — cohesive & bold</p>
+        </div>
+      </div>
+
+      <div class="portfolio-item" data-cat="docs">
+        <div class="portfolio-thumb" style="background:linear-gradient(135deg,rgba(245,158,11,0.2),rgba(239,68,68,0.1))">
+          📄
+          <div class="portfolio-overlay">
+            <span class="badge badge-cyan">Document</span>
+          </div>
+        </div>
+        <div class="portfolio-info">
+          <h4>Business Proposal PDF</h4>
+          <p>20-page formatted proposal with cover page, charts & appendix</p>
+        </div>
+      </div>
+
+      <div class="portfolio-item" data-cat="canva">
+        <div class="portfolio-thumb" style="background:linear-gradient(135deg,rgba(6,182,212,0.2),rgba(59,130,246,0.1))">
+          📑
+          <div class="portfolio-overlay">
+            <span class="badge badge-purple">Canva</span>
+          </div>
+        </div>
+        <div class="portfolio-info">
+          <h4>Modern Resume Design</h4>
+          <p>ATS-friendly, visually stunning resume with matching cover letter</p>
+        </div>
+      </div>
+
+      <div class="portfolio-item" data-cat="sheets">
+        <div class="portfolio-thumb" style="background:linear-gradient(135deg,rgba(16,185,129,0.2),rgba(59,130,246,0.1))">
+          🤖
+          <div class="portfolio-overlay">
+            <span class="badge badge-green">Automation</span>
+          </div>
+        </div>
+        <div class="portfolio-info">
+          <h4>Inventory Auto-Tracker</h4>
+          <p>Apps Script automation that emails low-stock alerts daily</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     TESTIMONIALS
+============================================================ -->
+<section class="section" style="background:var(--surface)">
+  <div class="container">
+
+    <div class="reveal" style="text-align:center">
+      <div class="section-label" style="justify-content:center">Client Love</div>
+      <h2 class="section-title">What Clients <span>Say</span></h2>
+    </div>
+
+    <div class="testimonials-grid">
+
+      <div class="testi-card reveal">
+        <div class="testi-stars">
+          <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+        </div>
+        <blockquote>"Absolutely incredible work! The Google Form + Sheet integration saved our HR team 6 hours a week. Delivered in less than 24 hours. Will definitely rehire!"</blockquote>
+        <div class="testi-author">
+          <div class="author-avatar" style="background:linear-gradient(135deg,#3b82f6,#06b6d4)">R</div>
+          <div>
+            <div class="author-name">Radhika Sharma</div>
+            <div class="author-role">HR Manager, Chandigarh</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testi-card reveal">
+        <div class="testi-stars">
+          <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+        </div>
+        <blockquote>"The Canva designs were exactly what I envisioned — modern, clean, and professional. My Instagram page engagement doubled after using the new posts!"</blockquote>
+        <div class="testi-author">
+          <div class="author-avatar" style="background:linear-gradient(135deg,#8b5cf6,#ec4899)">A</div>
+          <div>
+            <div class="author-name">Arjun Mehta</div>
+            <div class="author-role">Business Owner, Delhi</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testi-card reveal">
+        <div class="testi-stars">
+          <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+        </div>
+        <blockquote>"Got my complete sales dashboard within 2 days. The formulas, charts, and automation are flawless. Best freelancer I've worked with — highly recommended."</blockquote>
+        <div class="testi-author">
+          <div class="author-avatar" style="background:linear-gradient(135deg,#10b981,#059669)">P</div>
+          <div>
+            <div class="author-name">Priya Nair</div>
+            <div class="author-role">Startup Founder, Bangalore</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     ABOUT
+============================================================ -->
+<section id="about" class="section">
+  <div class="container">
+
+    <div class="about-grid">
+
+      <div class="about-visual reveal">
+        <div class="about-avatar">🧑‍💻</div>
+        <div class="about-badge">
+          <div class="num">3+</div>
+          <div class="lbl">Years Experience</div>
+        </div>
+      </div>
+
+      <div class="about-text reveal">
+        <div class="section-label">About Me</div>
+        <h2 class="section-title">Hi, I'm a <span>Digital Specialist</span></h2>
+
+        <p>I'm a passionate freelancer based in Ludhiana, Punjab, specializing in digital productivity tools and creative design. I help individuals, startups, and businesses streamline their workflows and build a strong digital presence.</p>
+
+        <p>With expertise in Google Workspace, Canva, and document design, I deliver clean, professional work that actually solves real problems — not just pretty mockups.</p>
+
+        <div class="skills-row">
+          <span class="skill-tag"><i class="fa-brands fa-google" style="color:#60a5fa"></i> Google Forms</span>
+          <span class="skill-tag"><i class="fa-solid fa-table-cells" style="color:#4ade80"></i> Google Sheets</span>
+          <span class="skill-tag"><i class="fa-solid fa-paintbrush" style="color:#c084fc"></i> Canva Pro</span>
+          <span class="skill-tag"><i class="fa-solid fa-file-pdf" style="color:#fbbf24"></i> PDF Design</span>
+          <span class="skill-tag"><i class="fa-solid fa-code" style="color:#22d3ee"></i> Apps Script</span>
+          <span class="skill-tag"><i class="fa-brands fa-figma" style="color:#f472b6"></i> Figma</span>
+          <span class="skill-tag"><i class="fa-solid fa-chart-bar" style="color:#fb923c"></i> Data Viz</span>
+        </div>
+
+        <div style="display:flex;gap:14px;flex-wrap:wrap">
+          <a href="#contact" class="btn btn-primary"><i class="fa-solid fa-envelope"></i> Work With Me</a>
+          <a href="https://wa.me/919888817474?text=Hello%2C%20I%20am%20interested%20in%20your%20tile%20services." class="btn btn-outline" target="_blank"><i class="fa-brands fa-whatsapp"></i> WhatsApp Me</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     CONTACT
+============================================================ -->
+<section id="contact" class="section" style="background:var(--surface)">
+  <div class="container">
+
+    <div class="reveal" style="text-align:center">
+      <div class="section-label" style="justify-content:center">Get in Touch</div>
+      <h2 class="section-title">Let's Start Your <span>Project</span></h2>
+      <p class="section-sub" style="margin:0 auto">Have a project in mind? Drop me a message and I'll get back to you within 2 hours.</p>
+    </div>
+
+    <div class="contact-grid">
+
+      <!-- Left: info -->
+      <div class="reveal">
+        <h3>Contact Information</h3>
+        <p>Reach out via the form, WhatsApp, or email. I'm available Mon–Sat, 9 AM – 9 PM IST.</p>
+
+        <a href="mailto:hello@digicraft.studio" class="contact-method">
+          <div class="cm-icon"><i class="fa-solid fa-envelope"></i></div>
+          <div>
+            <div class="cm-label">Email</div>
+            <div class="cm-value">Ankitdiwakar7474@gmail.com</div>
+          </div>
+        </a>
+
+        <a href="https://wa.me/919888817474?text=Hello%2C%20I%20am%20interested%20in%20your%20services." class="contact-method" target="_blank">
+          <div class="cm-icon" style="background:rgba(37,211,102,0.12);color:#22d3ee">
+            <i class="fa-brands fa-whatsapp"></i>
+          </div>
+          <div>
+            <div class="cm-label">WhatsApp</div>
+            <div class="cm-value">+91 9888817474</div>
+          </div>
+        </a>
+
+        <div class="contact-method">
+          <div class="cm-icon" style="background:rgba(168,85,247,0.12);color:#c084fc">
+            <i class="fa-solid fa-location-dot"></i>
+          </div>
+          <div>
+            <div class="cm-label">Location</div>
+            <div class="cm-value">Panchkula, Haryana, India</div>
+          </div>
+        </div>
+
+        <div class="contact-method">
+          <div class="cm-icon" style="background:rgba(245,158,11,0.12);color:#fbbf24">
+            <i class="fa-solid fa-clock"></i>
+          </div>
+          <div>
+            <div class="cm-label">Working Hours</div>
+            <div class="cm-value">Mon–Sat, 9:00 AM – 9:00 PM IST</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: form -->
+      <div class="reveal">
+        <div class="contact-form">
+          <div id="formSuccess" class="form-success">
+            <i class="fa-solid fa-circle-check"></i>
+            <strong>Message Sent!</strong>
+            <p style="font-size:0.9rem;color:var(--muted);margin-top:6px">I'll get back to you within 2 hours.</p>
+          </div>
+
+          <form id="contactForm" novalidate>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="fname">First Name</label>
+                <input type="text" id="fname" placeholder="Rahul" required/>
+                <div class="form-error" id="fnameErr">Please enter your name.</div>
+              </div>
+              <div class="form-group">
+                <label for="lname">Last Name</label>
+                <input type="text" id="lname" placeholder="Sharma"/>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" placeholder="rahul@example.com" required/>
+              <div class="form-error" id="emailErr">Please enter a valid email.</div>
+            </div>
+
+            <div class="form-group">
+              <label for="service">Service Interested In</label>
+              <select id="service">
+                <option value="">— Select a service —</option>
+                <option>Google Form Creation</option>
+                <option>Sheets Automation & Dashboard</option>
+                <option>Canva Design</option>
+                <option>Digital Document Creation</option>
+                <option>Other / Multiple Services</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Your Message</label>
+              <textarea id="message" rows="5" placeholder="Describe your project, requirements, or questions..." required></textarea>
+              <div class="form-error" id="msgErr">Please enter your message.</div>
+            </div>
+
+            <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center">
+              <i class="fa-solid fa-paper-plane"></i> Send Message
+            </button>
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     FOOTER
+============================================================ -->
+<footer>
+  <div class="container">
+    <div class="footer-top">
+
+      <div class="footer-brand">
+        <div class="nav-logo">Digi<span>Craft</span></div>
+        <p>Professional digital services — Google Forms, Sheets Automation, Canva Design, and Digital Documents.</p>
+        <div class="social-links" style="margin-top:20px">
+          <a href="#" class="social-link"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" class="social-link"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="#" class="social-link"><i class="fa-brands fa-twitter"></i></a>
+          <a href="#" class="social-link"><i class="fa-brands fa-github"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h5>Services</h5>
+        <ul class="footer-links">
+          <li><a href="#services">Google Forms</a></li>
+          <li><a href="#services">Sheets Automation</a></li>
+          <li><a href="#services">Canva Design</a></li>
+          <li><a href="#services">Digital Documents</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5>Quick Links</h5>
+        <ul class="footer-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#about">About Me</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5>Contact</h5>
+        <ul class="footer-links">
+          <li><a href="mailto:Ankitdiwakar7474@gmail.com">Ankitdiwakar7474@gmail.com</a></li>
+          <li><a href="https://wa.me/919888817474?text=Hello%2C%20I%20am%20interested%20in%20your%20services.">WhatsApp Me</a></li>
+          <li><a href="#contact">Send a Message</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2026 DigiCraft Studio. Made with ❤️ in Panchkula, India.</p>
+      <div class="social-links">
+        <a href="#" class="social-link"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#" class="social-link"><i class="fa-brands fa-linkedin-in"></i></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ============================================================
+     WHATSAPP FLOAT
+============================================================ -->
+<a href="https://wa.me/919888817474?text=Hi!%20I%20found%20your%20portfolio%20and%20I'm%20interested%20in%20your%20services."
+   class="wa-float" target="_blank" rel="noopener">
+  <span class="wa-tooltip">💬 Chat on WhatsApp</span>
+  <div style="position:relative">
+    <div class="wa-pulse"></div>
+    <div class="wa-btn"><i class="fa-brands fa-whatsapp"></i></div>
+  </div>
+</a>
+
+<!-- ============================================================
+     JAVASCRIPT
+============================================================ -->
+<script>
+  /* ── Navbar scroll effect ── */
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 50);
+  });
+
+  /* ── Active nav link on scroll ── */
+  const sections = document.querySelectorAll('section[id]');
+  const navAnchors = document.querySelectorAll('.nav-links a');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        navAnchors.forEach(a => {
+          a.classList.toggle('active', a.getAttribute('href') === '#' + e.target.id);
+        });
+      }
+    });
+  }, { rootMargin: '-40% 0px -55% 0px' });
+
+  sections.forEach(s => observer.observe(s));
+
+  /* ── Hamburger / mobile nav ── */
+  const hamburger  = document.getElementById('hamburger');
+  const mobileNav  = document.getElementById('mobileNav');
+
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('open');
+    mobileNav.classList.toggle('open');
+    document.body.style.overflow = mobileNav.classList.contains('open') ? 'hidden' : '';
+  });
+
+  function closeMobile() {
+    hamburger.classList.remove('open');
+    mobileNav.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  /* ── Scroll reveal ── */
+  const revealEls = document.querySelectorAll('.reveal');
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        // staggered delay based on sibling index
+        const siblings = [...e.target.parentElement.querySelectorAll('.reveal')];
+        const idx = siblings.indexOf(e.target);
+        e.target.style.transitionDelay = `${idx * 0.07}s`;
+        e.target.classList.add('visible');
+        revealObserver.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
+
+  revealEls.forEach(el => revealObserver.observe(el));
+
+  /* ── Portfolio filter ── */
+  function filterPortfolio(cat, btn) {
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+
+    document.querySelectorAll('.portfolio-item').forEach(item => {
+      const show = cat === 'all' || item.dataset.cat === cat;
+      item.style.opacity    = show ? '1' : '0.2';
+      item.style.transform  = show ? '' : 'scale(0.95)';
+      item.style.pointerEvents = show ? '' : 'none';
+      item.style.transition = 'opacity 0.35s ease, transform 0.35s ease';
+    });
+  }
+
+  /* ── Contact form validation ── */
+  document.getElementById('contactForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    let valid = true;
+
+    const fname = document.getElementById('fname');
+    const email = document.getElementById('email');
+    const msg   = document.getElementById('message');
+
+    // Reset errors
+    ['fnameErr','emailErr','msgErr'].forEach(id => {
+      document.getElementById(id).style.display = 'none';
+    });
+    [fname, email, msg].forEach(el => el.style.borderColor = '');
+
+    if (!fname.value.trim()) {
+      document.getElementById('fnameErr').style.display = 'block';
+      fname.style.borderColor = '#f87171';
+      valid = false;
+    }
+
+    const emailRx = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRx.test(email.value.trim())) {
+      document.getElementById('emailErr').style.display = 'block';
+      email.style.borderColor = '#f87171';
+      valid = false;
+    }
+
+    if (!msg.value.trim()) {
+      document.getElementById('msgErr').style.display = 'block';
+      msg.style.borderColor = '#f87171';
+      valid = false;
+    }
+
+    if (valid) {
+      // Simulate submission
+      const btn = this.querySelector('button[type=submit]');
+      btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Sending…';
+      btn.disabled = true;
+
+      setTimeout(() => {
+        this.style.display = 'none';
+        document.getElementById('formSuccess').style.display = 'block';
+      }, 1800);
+    }
+  });
+
+  /* ── Smooth animated counter ── */
+  function animateCount(el, target, suffix='') {
+    let start = 0;
+    const dur = 1800;
+    const step = target / (dur / 16);
+    const timer = setInterval(() => {
+      start = Math.min(start + step, target);
+      el.textContent = Math.floor(start) + suffix;
+      if (start >= target) clearInterval(timer);
+    }, 16);
+  }
+
+  // Trigger counters when hero stats enter view
+  const statsEl = document.querySelector('.hero-stats');
+  if (statsEl) {
+    const statsObs = new IntersectionObserver(entries => {
+      if (entries[0].isIntersecting) {
+        const nums = statsEl.querySelectorAll('.stat-num');
+        animateCount(nums[0], 150, '+');
+        animateCount(nums[1], 98, '%');
+        // nums[2] is text "48h" — skip
+        statsObs.disconnect();
+      }
+    }, { threshold: 0.5 });
+    statsObs.observe(statsEl);
+  }
+</script>
+
+</body>
+</html>
